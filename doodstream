@@ -1,0 +1,11 @@
+javascript:(function(){
+    // Désactiver les filtres AdGuard
+    let script = document.createElement('script');
+    script.innerHTML = `
+        setTimeout(() => {
+            let adBlockElements = document.querySelectorAll('[data-adguard]');
+            adBlockElements.forEach(el => el.removeAttribute('data-adguard'));
+        }, 1000);
+    `;
+    document.body.appendChild(script);
+})();
